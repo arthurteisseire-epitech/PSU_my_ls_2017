@@ -10,11 +10,15 @@
 
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <pwd.h>
+#include <grp.h>
 #include <time.h>
 #include <sys/sysmacros.h>
 #include <unistd.h>
+#include <dirent.h>
 
-void put_info(char *file_name, struct stat *sb);
+void my_ls(char **path_names, struct stat *sb);
 int print_filemode(struct stat *sb);
+void list_dir(char *dir_name);
 
 #endif

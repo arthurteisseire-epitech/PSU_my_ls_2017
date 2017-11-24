@@ -12,8 +12,8 @@ int main(int ac, char **av)
 {
 	struct stat sb;
 
-	if (ac != 2)
-		return (84);
-	put_info(av[1], &sb);
+	ac--;
+	av++;
+	my_ls(av, &sb);
 	return (0);
 }
