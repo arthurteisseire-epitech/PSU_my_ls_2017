@@ -16,7 +16,7 @@ int main(int ac, char **av)
 	av++;
 	//list_dir(".");
 	stat(av[0], &sb);
-	//my_ls(av, &sb);
+	my_ls(av, &sb);
 	get_time(&sb);
 	get_user(&sb);
 	get_hard_link(&sb);
