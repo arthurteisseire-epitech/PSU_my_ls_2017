@@ -10,7 +10,13 @@ DLIB	=	$(realpath lib/my)/
 LIB	=	my
 LIBS	=	-L$(DLIB) -l$(LIB)
 SRC     =	$(DSRC)main.c \
-		$(DSRC)info_file.c
+		$(DSRC)info_file.c \
+		$(DSRC)list_dir.c \
+		$(DSRC)get_time.c \
+		$(DSRC)get_user.c \
+		$(DSRC)get_hard_link.c \
+		$(DSRC)get_size.c \
+		$(DSRC)get_name.c
 INC	=	$(realpath include)
 INC_LIB	=	$(DLIB)include
 CFLAGS	=	-Wall -W -Wextra -I$(INC) -I$(INC_LIB) -g

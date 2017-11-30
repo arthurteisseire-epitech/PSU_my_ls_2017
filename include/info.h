@@ -20,5 +20,10 @@
 void my_ls(char **path_names, struct stat *sb);
 int print_filemode(struct stat *sb);
 void list_dir(char *dir_name);
+void get_time(struct stat *sb);
+void get_user(struct stat *sb);
+void get_hard_link(struct stat *sb);
+void get_size(struct stat *sb);
+void get_name(char *name);
 
 #endif
