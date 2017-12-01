@@ -10,7 +10,5 @@
 
 void get_time(struct stat *sb)
 {
-	my_printf("\nLast status change: %s", ctime(&sb->st_ctime));
-	my_printf("Last file access: %s\n", ctime(&sb->st_atime));
-	my_printf("Last file modification: %s\n", ctime(&sb->st_mtime));
+	my_printf("%s\t%s", ctime(&sb->st_mtime), ctime(&sb->st_mtime));
 }

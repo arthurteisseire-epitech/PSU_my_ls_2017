@@ -5,6 +5,7 @@
 ** By Arthur Teisseire
 */
 
+/*
 #include <stdio.h>
 #include "my.h"
 #include "info.h"
@@ -39,21 +40,22 @@ void my_ls(char **path_names, struct stat *sb)
 int print_filemode(struct stat *sb)
 {
 	switch (sb->st_mode & S_IFMT) {
-		case S_IFBLK:  
+		case S_IFBLK:
 			return (my_printf("block device\n"));
-		case S_IFCHR:  
+		case S_IFCHR:
 			return (my_printf("character device\n"));
-		case S_IFDIR:  
+		case S_IFDIR:
 			return (my_printf("directory\n"));
-		case S_IFIFO:  
+		case S_IFIFO:
 			return (my_printf("FIFO/pipe\n"));
-		case S_IFLNK:  
+		case S_IFLNK:
 			return (my_printf("symlink\n"));
-		case S_IFREG:  
+		case S_IFREG:
 			return (my_printf("regular file\n"));
-		case S_IFSOCK: 
+		case S_IFSOCK:
 			return (my_printf("socket\n"));
-		default:       
+		default:
 			return (my_printf("unknown?\n"));
 	}
 }
+*/

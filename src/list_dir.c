@@ -15,7 +15,8 @@ void list_dir(char *dir_name)
 
 	if (d) {
 		while ((dir = readdir(d)))
-			my_printf("%s\n", dir->d_name);
+			my_printf("%s ", dir->d_name);
 		closedir(d);
 	}
+	my_putchar('\n');
 }
