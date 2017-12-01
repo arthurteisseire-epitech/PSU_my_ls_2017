@@ -41,6 +41,8 @@ void get_rights(struct stat *sb)
 void put_filetype(struct stat *sb)
 {
 	for (int i = 0; i < 7; i++)
-		if ((sb->st_mode & S_IFMT) == filetypes[i].nb)
+		if ((sb->st_mode & S_IFMT) == filetypes[i].nb) {
 			my_putchar(filetypes[i].c);
+			return;
+	}
 }
