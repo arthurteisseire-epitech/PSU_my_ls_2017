@@ -10,5 +10,16 @@
 
 void get_time(struct stat *sb)
 {
-	my_printf("%s\t%s", ctime(&sb->st_mtime), ctime(&sb->st_mtime));
+	char *res = ctime(&sb->st_mtime);
+	char *end;
+
+	while (*res != ' ')
+		res++;
+	res++;
+	end = res;
+	while (*end != ':')
+		end++;
+	*(end + 3) = '\0';
+	my_printf(res);
+	my_putchar(' ');
 }

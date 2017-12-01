@@ -18,7 +18,8 @@ SRC	=	$(DSRC)main.c \
 		$(DISP)get_hard_link.c \
 		$(DISP)get_size.c \
 		$(DISP)get_name.c \
-		$(DISP)get_rights.c
+		$(DISP)get_rights.c \
+		$(DISP)disp_all.c
 INC	=	$(realpath include)
 INC_LIB	=	$(DLIB)include
 CFLAGS	=	-Wall -W -Wextra -I$(INC) -I$(INC_LIB) -g
