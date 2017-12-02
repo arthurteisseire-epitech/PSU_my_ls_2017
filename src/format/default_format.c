@@ -10,9 +10,11 @@
 
 void default_format(info_t *info)
 {
-	get_name(info->name);
-	if (info->curr_file != info->nb_files)
-		my_putchar(' ');
-	else
-		my_putchar('\n');
+	if (info->name[0] != '.') {
+		get_name(info->name);
+		if (info->curr_file != info->nb_files)
+			my_putstr("  ");
+		else
+			my_putchar('\n');
+	}
 }
