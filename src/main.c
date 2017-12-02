@@ -11,12 +11,12 @@
 int main(int ac, char **av)
 {
 	info_t info;
-	action_f action = default_action;
 	format_f format = default_format;
-	int is_empty = 1;
+	action_f action = default_action;
 
 	ac--;
 	av++;
+	info.nb_args = 0;
 	for (int i = 0; i < ac; i++) {
 		if (av[i][0] == '-') {
 			info.name = av[i];
@@ -24,17 +24,12 @@ int main(int ac, char **av)
 			action = get_action(&info);
 			format = get_format(&info);
 		} else
-			is_empty = 0;
+			info.nb_args++;
 	}
-	if (is_empty) {
+	if (info.nb_args == 0) {
 		info.name = ".";
 		action(&info, format);
-	}
-	for (int i = 0; i < ac; i++) {
-		if (av[i][0] != '-') {
-			info.name = av[i];
-			action(&info, format);
-		}
-	}
+	} else
+		list_files(&info, av, action, format);
 	return (0);
 }

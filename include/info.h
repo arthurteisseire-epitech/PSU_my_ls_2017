@@ -22,7 +22,7 @@
 #include "format.h"
 #include "action.h"
 
-int print_filemode(struct stat *sb);
+//int print_filemode(struct stat *sb);
 void list_dir(info_t *info);
 void get_time(struct stat *sb);
 void get_user(struct stat *sb);
@@ -37,6 +37,8 @@ void default_format(info_t *info);
 
 void recursive(info_t *info, format_f format);
 void default_action(info_t *info, format_f format);
+
+void list_files(info_t *info, char **av, action_f action, format_f format);
 
 action_f get_action(info_t *info);
 format_f get_format(info_t *info);

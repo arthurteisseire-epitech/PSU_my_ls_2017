@@ -15,6 +15,7 @@ ACTION	=	$(DSRC)action/
 SRC	=	$(DSRC)main.c \
 		$(DSRC)info_file.c \
 		$(DSRC)list_dir.c \
+		$(DSRC)list_files.c \
 		$(DSRC)get_option.c \
 		$(DISP)get_time.c \
 		$(DISP)get_user.c \
