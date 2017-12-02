@@ -13,6 +13,7 @@ int main(int ac, char **av)
 	info_t info;
 	action_f action = default_action;
 	format_f format = default_format;
+	int is_empty = 1;
 
 	ac--;
 	av++;
@@ -22,13 +23,18 @@ int main(int ac, char **av)
 			stat(info.name, &info.sb);
 			action = get_action(&info);
 			format = get_format(&info);
-		}
+		} else
+			is_empty = 0;
+	}
+	if (is_empty) {
+		info.name = ".";
+		action(&info, format);
 	}
 	for (int i = 0; i < ac; i++) {
-		info.name = av[i];
-		stat(info.name, &info.sb);
-		if (av[i][0] != '-')
+		if (av[i][0] != '-') {
+			info.name = av[i];
 			action(&info, format);
+		}
 	}
 	return (0);
 }

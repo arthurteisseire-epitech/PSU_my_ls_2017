@@ -24,5 +24,5 @@ void get_rights(struct stat *sb)
 		else
 			my_putchar('-');
 	}
-	my_putchar(' ');
+	my_putstr(". ");
 }

@@ -13,8 +13,9 @@ void default_action(info_t *info, format_f format)
 	struct dirent *dir;
 
 	if (d) {
-		while ((dir = readdir(d))) {
+		while ((dir = readdir(d)) != NULL) {
 			info->name = dir->d_name;
+			stat(info->name, &info->sb);
 			format(info);
 		}
 		closedir(d);
