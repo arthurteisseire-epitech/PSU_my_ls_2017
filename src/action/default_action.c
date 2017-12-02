@@ -5,14 +5,16 @@
 ** By Arthur Teisseire
 */
 
+#include "my.h"
 #include "info.h"
 
 void default_action(info_t *info, format_f format)
 {
 	DIR *d = opendir(info->name);
 	struct dirent *dir;
+	int total = count_files(info);
 
-	count_files(info);
+	my_printf("Total %d\n", total);
 	if (d) {
 		while ((dir = readdir(d)) != NULL) {
 			info->curr_file++;

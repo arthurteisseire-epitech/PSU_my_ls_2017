@@ -26,8 +26,8 @@ int main(int ac, char **av)
 		} else
 			info.nb_args++;
 	}
+	info.name = ".";
 	if (info.nb_args == 0) {
-		info.name = ".";
 		action(&info, format);
 	} else
 		list_files(&info, av, action, format);

@@ -40,7 +40,7 @@ void default_action(info_t *info, format_f format);
 
 void list_files(info_t *info, char **av, action_f action, format_f format);
 
-void count_files(info_t *info);
+int count_files(info_t *info);
 
 action_f get_action(info_t *info);
 format_f get_format(info_t *info);
