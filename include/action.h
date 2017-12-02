@@ -10,6 +10,8 @@
 
 #include "info_t.h"
 
+#define NB_ACTION 1
+
 typedef void (*action_f)(info_t *, void (*)(info_t *));
 
 typedef struct action {

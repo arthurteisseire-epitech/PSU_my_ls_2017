@@ -8,4 +8,15 @@
 #include "info.h"
 
 void default_action(info_t *info, format_f format)
-{}
+{
+	DIR *d = opendir(info->name);
+	struct dirent *dir;
+
+	if (d) {
+		while ((dir = readdir(d))) {
+			info->name = dir->d_name;
+			format(info);
+		}
+		closedir(d);
+	}
+}

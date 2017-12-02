@@ -19,7 +19,7 @@ action_f get_action(info_t *info)
 {
 	int i;
 
-	for (int opt_i = 0; opt_i < 1; opt_i++) {
+	for (int opt_i = 0; opt_i < NB_FORMAT; opt_i++) {
 		i = 1;
 		while (info->name[i] != '\0') {
 			if (info->name[i] == action[opt_i].arg)
@@ -34,7 +34,7 @@ format_f get_format(info_t *info)
 {
 	int i;
 
-	for (int format_i = 0; format_i < 1; format_i++) {
+	for (int format_i = 0; format_i < NB_ACTION; format_i++) {
 		i = 1;
 		while (info->name[i] != '\0') {
 			if (info->name[i] == formats[format_i].arg)

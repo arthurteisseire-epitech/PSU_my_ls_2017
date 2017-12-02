@@ -10,7 +10,6 @@
 
 void l_format(info_t *info)
 {
-	stat(info->name, &info->sb);
 	get_filetype(&info->sb);
 	get_rights(&info->sb);
 	get_hard_link(&info->sb);

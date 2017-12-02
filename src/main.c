@@ -11,15 +11,24 @@
 int main(int ac, char **av)
 {
 	info_t info;
+	action_f action = default_action;
+	format_f format = default_format;
 
 	ac--;
 	av++;
-	info.name = ".";
-	stat(info.name, &info.sb);
-	//list_dir(&info);
+	for (int i = 0; i < ac; i++) {
+		if (av[i][0] == '-') {
+			info.name = av[i];
+			stat(info.name, &info.sb);
+			action = get_action(&info);
+			format = get_format(&info);
+		}
+	}
 	for (int i = 0; i < ac; i++) {
 		info.name = av[i];
-		//my_ls(&info);
+		stat(info.name, &info.sb);
+		if (av[i][0] != '-')
+			action(&info, format);
 	}
 	return (0);
 }

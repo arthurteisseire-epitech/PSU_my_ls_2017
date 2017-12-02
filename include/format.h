@@ -10,6 +10,8 @@
 
 #include "info_t.h"
 
+#define NB_FORMAT 1
+
 typedef void (*format_f)(info_t *);
 
 typedef struct format {
