@@ -9,6 +9,7 @@
 
 void disp_all(struct stat *sb, char *path_name)
 {
+	stat(path_name, sb);
 	get_rights(sb);
 	get_hard_link(sb);
 	get_user(sb);

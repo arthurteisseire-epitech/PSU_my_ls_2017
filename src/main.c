@@ -10,12 +10,13 @@
 
 int main(int ac, char **av)
 {
-	struct stat sb;
+	info_t info;
 
 	ac--;
 	av++;
-	//list_dir(".");
-	stat(av[0], &sb);
-	disp_all(&sb, av[0]);
+	info.name = ".";
+	stat(info.name, &info.sb);
+	list_dir(&info);
+	//disp_all(&sb, av[0]);
 	return (0);
 }

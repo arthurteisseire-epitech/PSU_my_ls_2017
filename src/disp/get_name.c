@@ -9,5 +9,5 @@
 
 void get_name(char *name)
 {
-	my_printf("%s\n", name);
+	my_printf("%s", name);
 }

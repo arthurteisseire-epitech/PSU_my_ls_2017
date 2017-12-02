@@ -8,15 +8,18 @@
 #include "my.h"
 #include "info.h"
 
-void list_dir(char *dir_name)
+void list_dir(info_t *info)
 {
-	DIR *d = opendir(dir_name);
+	DIR *d = opendir(info->name);
 	struct dirent *dir;
+	void (*format)(struct stat *sb, char *name) = disp_all;
 
 	if (d) {
-		while ((dir = readdir(d)))
-			my_printf("%s ", dir->d_name);
+		while ((dir = readdir(d))) {
+			//my_printf("%s ", dir->d_name);
+			format(&info->sb, dir->d_name);
+			my_putchar('\n');
+		}
 		closedir(d);
 	}
-	my_putchar('\n');
 }

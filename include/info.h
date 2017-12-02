@@ -17,10 +17,10 @@
 #include <dirent.h>
 #include <unistd.h>
 #include "dict.h"
+#include "info_t.h"
 
-void my_ls(char **path_names, struct stat *sb);
 int print_filemode(struct stat *sb);
-void list_dir(char *dir_name);
+void list_dir(info_t *info);
 void get_time(struct stat *sb);
 void get_user(struct stat *sb);
 void get_hard_link(struct stat *sb);
