@@ -15,8 +15,10 @@ void count_files(info_t *info)
 	info->total = 0;
 	if (d) {
 		while ((dir = readdir(d)) != NULL) {
-			stat(dir->d_name, &info->sb);
-			info->total += info->sb.st_blocks;
+			if (dir->d_name[0] != '.') {
+				stat(dir->d_name, &info->sb);
+				info->total += info->sb.st_blocks;
+			}
 			info->nb_files++;
 		}
 		closedir(d);
