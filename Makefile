@@ -12,9 +12,8 @@ LIBS	=	-L$(DLIB) -l$(LIB)
 DISP	=	$(DSRC)disp/
 FORMAT	=	$(DSRC)format/
 ACTION	=	$(DSRC)action/
+TOOLS	=	$(DSRC)tools/
 SRC	=	$(DSRC)main.c \
-		$(DSRC)info_file.c \
-		$(DSRC)list_dir.c \
 		$(DSRC)list_files.c \
 		$(DSRC)get_option.c \
 		$(DISP)get_time.c \
@@ -27,7 +26,8 @@ SRC	=	$(DSRC)main.c \
 		$(FORMAT)l_format.c \
 		$(FORMAT)default_format.c \
 		$(ACTION)recursive.c \
-		$(ACTION)default_action.c
+		$(ACTION)default_action.c \
+		$(TOOLS)count_files.c
 INC	=	$(realpath include)
 INC_LIB	=	$(DLIB)include
 CFLAGS	=	-Wall -W -Wextra -I$(INC) -I$(INC_LIB) -g

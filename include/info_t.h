@@ -11,6 +11,8 @@
 typedef struct info {
 	char *name;
 	struct stat sb;
+	int nb_files;
+	int curr_file;
 	int nb_args;
 } info_t;
 

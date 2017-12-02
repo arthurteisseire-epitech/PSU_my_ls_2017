@@ -11,5 +11,8 @@
 void default_format(info_t *info)
 {
 	get_name(info->name);
-	my_putchar(' ');
+	if (info->curr_file != info->nb_files)
+		my_putchar(' ');
+	else
+		my_putchar('\n');
 }
