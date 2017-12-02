@@ -7,19 +7,19 @@
 
 #include "info.h"
 
-int count_files(info_t *info)
+void count_files(info_t *info)
 {
 	DIR *d = opendir(info->name);
 	struct dirent *dir;
-	int total = 0;
 
+	info->total = 0;
 	if (d) {
 		while ((dir = readdir(d)) != NULL) {
-			stat(info->name, &info->sb);
-			total += info->sb.st_blksize;
+			stat(dir->d_name, &info->sb);
+			info->total += info->sb.st_blocks;
 			info->nb_files++;
 		}
 		closedir(d);
 	}
-	return (total);
+	info->total /= 2;
 }

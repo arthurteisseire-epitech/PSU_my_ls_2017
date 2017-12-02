@@ -10,6 +10,8 @@
 
 void l_format(info_t *info)
 {
+	if (info->curr_file == 1)
+		my_printf("Total %d\n", info->total);
 	if (info->name[0] != '.') {
 		get_filetype(&info->sb);
 		get_rights(&info->sb);

@@ -12,9 +12,8 @@ void default_action(info_t *info, format_f format)
 {
 	DIR *d = opendir(info->name);
 	struct dirent *dir;
-	int total = count_files(info);
-
-	my_printf("Total %d\n", total);
+	
+	count_files(info);
 	if (d) {
 		while ((dir = readdir(d)) != NULL) {
 			info->curr_file++;

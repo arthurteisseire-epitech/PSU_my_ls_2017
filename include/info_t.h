@@ -14,6 +14,7 @@ typedef struct info {
 	int nb_files;
 	int curr_file;
 	int nb_args;
+	int total;
 } info_t;
 
 #endif
