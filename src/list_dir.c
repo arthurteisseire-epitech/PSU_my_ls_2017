@@ -12,12 +12,13 @@ void list_dir(info_t *info)
 {
 	DIR *d = opendir(info->name);
 	struct dirent *dir;
-	void (*format)(struct stat *sb, char *name) = disp_all;
+	void (*format)(info_t *info) = disp_all;
 
 	if (d) {
 		while ((dir = readdir(d))) {
 			//my_printf("%s ", dir->d_name);
-			format(&info->sb, dir->d_name);
+			info->name = dir->d_name;
+			format(info);
 			my_putchar('\n');
 		}
 		closedir(d);

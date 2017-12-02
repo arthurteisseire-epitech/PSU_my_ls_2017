@@ -28,6 +28,6 @@ void get_size(struct stat *sb);
 void get_rights(struct stat *sb);
 void get_name(char *name);
 void put_filetype(struct stat *sb);
-void disp_all(struct stat *sb, char *path_name);
+void disp_all(info_t *info);
 
 #endif

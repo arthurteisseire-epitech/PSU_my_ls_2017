@@ -7,13 +7,13 @@
 
 #include "info.h"
 
-void disp_all(struct stat *sb, char *path_name)
+void disp_all(info_t *info)
 {
-	stat(path_name, sb);
-	get_rights(sb);
-	get_hard_link(sb);
-	get_user(sb);
-	get_size(sb);
-	get_time(sb);
-	get_name(path_name);
+	stat(info->name, &info->sb);
+	get_rights(&info->sb);
+	get_hard_link(&info->sb);
+	get_user(&info->sb);
+	get_size(&info->sb);
+	get_time(&info->sb);
+	get_name(info->name);
 }
