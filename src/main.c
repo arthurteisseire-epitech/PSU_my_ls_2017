@@ -16,7 +16,10 @@ int main(int ac, char **av)
 	av++;
 	info.name = ".";
 	stat(info.name, &info.sb);
-	list_dir(&info);
-	//disp_all(&sb, av[0]);
+	//list_dir(&info);
+	for (int i = 0; i < ac; i++) {
+		info.name = av[i];
+		//my_ls(&info);
+	}
 	return (0);
 }

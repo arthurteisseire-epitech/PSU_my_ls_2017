@@ -12,7 +12,7 @@ void list_dir(info_t *info)
 {
 	DIR *d = opendir(info->name);
 	struct dirent *dir;
-	void (*format)(info_t *info) = disp_all;
+	void (*format)(info_t *info) = l_format;
 
 	if (d) {
 		while ((dir = readdir(d))) {
