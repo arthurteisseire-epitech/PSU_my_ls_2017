@@ -7,16 +7,18 @@
 
 #include "info.h"
 
-void count_files(info_t *info)
+void count_files(info_t *info, char *path)
 {
-	DIR *d = opendir(info->name);
+	DIR *d = opendir(path);
 	struct dirent *dir;
+	char *path_file;
 
 	info->total = 0;
 	if (d) {
 		while ((dir = readdir(d)) != NULL) {
 			if (dir->d_name[0] != '.') {
-				stat(dir->d_name, &info->sb);
+				path_file = concat(path, dir->d_name);
+				stat(path_file, &info->sb);
 				info->total += info->sb.st_blocks;
 			}
 			info->nb_files++;

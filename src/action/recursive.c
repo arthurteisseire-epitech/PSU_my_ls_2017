@@ -7,17 +7,20 @@
 
 #include "info.h"
 
-void recursive(info_t *info, void (*format)(info_t *))
+void recursive(info_t *info, format_f format)
 {
-	DIR *d = opendir(info->name);
+	char *path = info->name;
+	DIR *d = opendir(path);
 	struct dirent *dir;
-
-	count_files(info);
+	char *path_file;
+	
+	count_files(info, path);
 	if (d) {
 		while ((dir = readdir(d)) != NULL) {
 			info->curr_file++;
 			info->name = dir->d_name;
-			stat(info->name, &info->sb);
+			path_file = concat(path, info->name);
+			stat(path_file, &info->sb);
 			format(info);
 		}
 		closedir(d);

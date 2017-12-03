@@ -38,7 +38,8 @@ void default_action(info_t *info, format_f format);
 
 void list_files(info_t *info, char **av, action_f action, format_f format);
 
-void count_files(info_t *info);
+void count_files(info_t *info, char *path);
+char *concat(char *str1, char *str2);
 
 action_f get_action(info_t *info);
 format_f get_format(info_t *info);

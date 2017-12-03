@@ -27,10 +27,11 @@ SRC	=	$(DSRC)main.c \
 		$(FORMAT)default_format.c \
 		$(ACTION)recursive.c \
 		$(ACTION)default_action.c \
-		$(TOOLS)count_files.c
+		$(TOOLS)count_files.c \
+		$(TOOLS)concat.c
 INC	=	$(realpath include)
 INC_LIB	=	$(DLIB)include
-CFLAGS	=	-Wall -W -Wextra -I$(INC) -I$(INC_LIB) -g
+CFLAGS	=	-Wall -W -Wextra -I$(INC) -I$(INC_LIB) -ggdb3
 OBJ	=	$(SRC:.c=.o)
 NAME	=	my_ls
 
