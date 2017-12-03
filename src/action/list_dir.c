@@ -11,7 +11,7 @@ void list_dir(info_t *info, format_f format, char *path, DIR *d)
 {
 	char *path_file;
 	struct dirent *dir;
-	
+
 	while ((dir = readdir(d)) != NULL) {
 		info->curr_file++;
 		info->name = dir->d_name;

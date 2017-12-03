@@ -13,7 +13,7 @@ void recursive(info_t *info, format_f format)
 	DIR *d = opendir(path);
 	struct dirent *dir;
 	char *path_file;
-	
+
 	count_files(info, path);
 	if (d) {
 		while ((dir = readdir(d)) != NULL) {
