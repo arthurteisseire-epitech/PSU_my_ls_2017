@@ -38,6 +38,7 @@ void default_format(info_t *info);
 
 void recursive(info_t *info, format_f format);
 void default_action(info_t *info, format_f format);
+void list_dir(info_t *info, format_f format, char *path, DIR *d);
 
 void list_files(info_t *info, char **av, action_f action, format_f format);
 

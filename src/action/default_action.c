@@ -12,20 +12,11 @@ void default_action(info_t *info, format_f format)
 {
 	char *path = info->name;
 	DIR *d = opendir(path);
-	struct dirent *dir;
-	char *path_file;
-	
+
 	count_files(info, path);
-	if (d) {
-		while ((dir = readdir(d)) != NULL) {
-			info->curr_file++;
-			info->name = dir->d_name;
-			path_file = concat(path, info->name);
-			stat(path_file, &info->sb);
-			format(info);
-		}
-		closedir(d);
-	} else {
+	if (d)
+		list_dir(info, format, path, d);
+	else {
 		stat(info->name, &info->sb);
 		format(info);
 	}

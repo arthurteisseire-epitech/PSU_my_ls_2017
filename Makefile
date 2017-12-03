@@ -30,6 +30,7 @@ SRC	=	$(DSRC)main.c \
 		$(FORMAT)one_format.c \
 		$(ACTION)recursive.c \
 		$(ACTION)default_action.c \
+		$(ACTION)list_dir.c \
 		$(TOOLS)count_files.c \
 		$(TOOLS)concat.c
 INC	=	$(realpath include)
