@@ -10,5 +10,5 @@
 
 void get_hard_link(struct stat *sb)
 {
-	my_printf("%d ", (int) sb->st_nlink);
+	my_printf("%d ", sb->st_nlink);
 }

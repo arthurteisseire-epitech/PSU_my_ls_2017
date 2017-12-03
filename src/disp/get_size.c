@@ -10,5 +10,5 @@
 
 void get_size(struct stat *sb)
 {
-	my_printf("%u ", (unsigned) sb->st_size);
+	my_printf("%u ", sb->st_size);
 }
