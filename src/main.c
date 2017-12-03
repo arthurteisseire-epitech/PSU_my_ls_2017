@@ -13,6 +13,7 @@ int main(int ac, char **av)
 	info_t info;
 	format_f format = default_format;
 	action_f action = default_action;
+	int is_empty = 1;
 
 	ac--;
 	av++;
@@ -24,10 +25,11 @@ int main(int ac, char **av)
 			action = get_action(&info);
 			format = get_format(&info);
 		} else
-			info.nb_args++;
+			is_empty = 0;
+		info.nb_args++;
 	}
 	info.name = ".";
-	if (info.nb_args == 0) {
+	if (is_empty) {
 		action(&info, format);
 	} else
 		list_files(&info, av, action, format);
