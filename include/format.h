@@ -10,7 +10,7 @@
 
 #include "info_t.h"
 
-#define NB_FORMAT 1
+#define NB_FORMAT 2
 
 typedef void (*format_f)(info_t *);
 

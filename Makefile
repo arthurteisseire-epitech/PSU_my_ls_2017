@@ -25,6 +25,7 @@ SRC	=	$(DSRC)main.c \
 		$(DISP)get_filetype.c \
 		$(FORMAT)l_format.c \
 		$(FORMAT)default_format.c \
+		$(FORMAT)one_format.c \
 		$(ACTION)recursive.c \
 		$(ACTION)default_action.c \
 		$(TOOLS)count_files.c \

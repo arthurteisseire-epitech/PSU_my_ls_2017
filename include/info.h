@@ -31,6 +31,7 @@ void get_filetype(struct stat *sb);
 void get_name(char *name);
 
 void l_format(info_t *info);
+void one_format(info_t *info);
 void default_format(info_t *info);
 
 void recursive(info_t *info, format_f format);
