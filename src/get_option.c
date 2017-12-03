@@ -8,6 +8,7 @@
 #include "info.h"
 
 static const format_t formats[] = {
+	{'g', g_format},
 	{'l', l_format},
 	{'1', one_format}
 };

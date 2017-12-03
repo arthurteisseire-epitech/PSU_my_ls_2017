@@ -18,11 +18,13 @@ SRC	=	$(DSRC)main.c \
 		$(DSRC)get_option.c \
 		$(DISP)get_time.c \
 		$(DISP)get_user.c \
+		$(DISP)get_group.c \
 		$(DISP)get_hard_link.c \
 		$(DISP)get_size.c \
 		$(DISP)get_name.c \
 		$(DISP)get_rights.c \
 		$(DISP)get_filetype.c \
+		$(FORMAT)g_format.c \
 		$(FORMAT)l_format.c \
 		$(FORMAT)default_format.c \
 		$(FORMAT)one_format.c \

@@ -24,6 +24,7 @@
 
 void get_time(struct stat *sb);
 void get_user(struct stat *sb);
+void get_group(struct stat *sb);
 void get_hard_link(struct stat *sb);
 void get_size(struct stat *sb);
 void get_rights(struct stat *sb);
@@ -31,6 +32,7 @@ void get_filetype(struct stat *sb);
 void get_name(char *name);
 
 void l_format(info_t *info);
+void g_format(info_t *info);
 void one_format(info_t *info);
 void default_format(info_t *info);
 
