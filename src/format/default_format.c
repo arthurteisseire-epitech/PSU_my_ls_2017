@@ -17,4 +17,6 @@ void default_format(info_t *info)
 		else
 			my_putchar('\n');
 	}
+	if (info->curr_file == info->nb_files)
+		my_putchar('\n');
 }
