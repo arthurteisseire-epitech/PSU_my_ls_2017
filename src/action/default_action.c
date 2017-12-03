@@ -25,5 +25,8 @@ void default_action(info_t *info, format_f format)
 			format(info);
 		}
 		closedir(d);
+	} else {
+		stat(info->name, &info->sb);
+		format(info);
 	}
 }
